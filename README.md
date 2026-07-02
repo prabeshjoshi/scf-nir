@@ -1,4 +1,4 @@
-# Spectral Contrast Features (SCF) — reference implementation
+# Spectral Contrast Features (SCF): reference implementation
 
 Reference implementation accompanying:
 
@@ -9,23 +9,19 @@ SCF constructs predictive features as **differences between the mean
 intensities of paired spectral bins**, whose positions, widths, and sparsity
 are jointly optimised by a genetic algorithm and passed to PLSR.
 
-This repository is deliberately **minimal**: it implements the method exactly as
-described in the manuscript so that the reported results can be verified, rather
-than providing a general-purpose toolkit. A broader package with additional
-feature forms and utilities is maintained separately.
 
 ## What is here
 
 | File | Manuscript reference |
 |------|----------------------|
-| `scf/features.py` | Contrast-feature construction — **Equation (1)**; chromosome encoding `[s1, w1, s2, w2, active]` (Section 2.3) |
-| `scf/ga.py` | Genetic-algorithm optimisation of the penalised fitness — **Equation (2)**; default hyperparameters reproduce **Table 2** (Section 2.4) |
+| `scf/features.py` | Contrast-feature construction: **Equation (1)**; chromosome encoding `[s1, w1, s2, w2, active]` (Section 2.3) |
+| `scf/ga.py` | Genetic-algorithm optimisation of the penalised fitness : **Equation (2)**; default hyperparameters reproduce **Table 2** (Section 2.4) |
 | `scf/plsr.py` | PLSR with latent-variable selection by inner cross-validation, "up to 10 latent variables" (Section 2.4); full-spectrum baseline uses the same selection so it is never fixed at an arbitrary component count |
-| `scf/evaluation.py` | Nested cross-validation and metrics — **Section 2.5** |
-| `scf/preprocessing.py` | Wavelength truncation, Savitzky–Golay derivatives, SNV — **Section 2.2** |
+| `scf/evaluation.py` | Nested cross-validation and metrics : **Section 2.5** |
+| `scf/preprocessing.py` | Wavelength truncation, Savitzky–Golay derivatives, SNV : **Section 2.2** |
 | `examples/wheat_reproduce.py` | Deterministic reproduction of the wheat SG² result (**Table 3**) and cross-instrument transfer (**Section 3.1.5**) from the GA-selected feature set |
 | `examples/wheat_scf_example.py` | End-to-end run that **rediscovers** the contrast features with the genetic algorithm |
-| `selftest.py` | Runs the whole pipeline on synthetic data — no dataset required |
+| `selftest.py` | Runs the whole pipeline on synthetic data : no dataset required |
 
 ## Method in one page
 
@@ -53,7 +49,7 @@ fold never inform that fold's error estimate.
 ```bash
 pip install -r requirements.txt
 
-# No data needed — verifies the implementation runs:
+# No data needed : verifies the implementation runs:
 python selftest.py
 
 # Reproduce the wheat headline result (seconds; uses the GA-selected features):
@@ -72,7 +68,7 @@ Datasets are public third-party benchmarks and are not redistributed here; see
 The genetic algorithm is stochastic. The exact bins and metrics vary slightly
 between runs and random seeds; this is expected and does not affect the
 method's conclusions. `wheat_reproduce.py` uses the exact feature set selected
-on the calibration data and is deterministic — its three features decode to the
+on the calibration data and is deterministic : its three features decode to the
 wavelength regions reported in Section 3.1.2:
 
 ```
@@ -90,4 +86,4 @@ F3: [855.0-862.0]   - [1012.0-1021.5] nm
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+MIT : see [`LICENSE`](LICENSE).
