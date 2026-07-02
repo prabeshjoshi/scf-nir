@@ -1,11 +1,11 @@
 """
 PLSR fitting utilities.
 
-The downstream regressor is PLSR (Section 2.5). Two behaviours from the
+The downstream regressor is PLSR. Two behaviours from the
 manuscript are implemented here:
 
 * Latent-variable selection by an inner cross-validation loop, "up to 10
-  latent variables" (Section 2.4). This is used for both the SCF feature
+  latent variables". This is used for both the SCF feature
   matrix and the full-spectrum baseline, so the baseline is never fixed at an
   arbitrary component count.
 * A cross-validated RMSE used as the GA fitness metric (Equation 2).
@@ -21,7 +21,7 @@ from sklearn.cross_decomposition import PLSRegression
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error
 
-MAX_LV = 10  # "up to 10 latent variables" (Section 2.4)
+MAX_LV = 12  # Change max compoenents as needed
 
 
 def _fit_predict(Xtr, ytr, Xte, n_components):
