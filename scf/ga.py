@@ -1,5 +1,5 @@
 """
-Genetic-algorithm optimisation of Spectral Contrast Features (Section 2.4).
+Genetic-algorithm optimisation of Spectral Contrast Features.
 
 A chromosome is a (P, 5) integer array whose rows are genes
 [s1, w1, s2, w2, active]. The GA minimises the penalised fitness of
@@ -7,7 +7,7 @@ Equation (2):
 
     fitness = RMSE_cv( X_train, y | active SCF features )  +  lambda * n_active
 
-Default hyperparameters reproduce Table 2 of the manuscript.
+Default hyperparameters.
 """
 
 import random
