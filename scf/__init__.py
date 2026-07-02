@@ -1,16 +1,11 @@
 """
-Spectral Contrast Features (SCF) — minimal reference implementation.
+Spectral Contrast Features (SCF): reference implementation.
 
 A bin-difference feature transformation for NIR calibration: predictive
 features are constructed as differences between the mean intensities of paired
 spectral bins, whose positions, widths, and sparsity are jointly optimised by a
 genetic algorithm and passed to PLSR.
 
-This package is the reference implementation accompanying the manuscript
-"Spectral Contrast Features: A Bin-Difference Approach to Interpretable,
-Parsimonious, and Cross-Instrument NIR Calibration". It is intentionally
-minimal: it reproduces the method as described (Equations 1-2, Table 2,
-Section 2.5) rather than providing a general-purpose toolkit.
 """
 
 from .features import make_scf_features, chromosome_to_bins, n_variables_used
