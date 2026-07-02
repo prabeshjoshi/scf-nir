@@ -15,9 +15,9 @@ original source.
 
 The wheat scripts read Excel spreadsheets with:
 
-- column 0 — sample ID (ignored)
-- column 1 — reference protein (%)
-- columns 2+ — spectra, with **wavelength (nm) as the column header** of each
+- column 0: sample ID (ignored)
+- column 1: reference protein (%)
+- columns 2+ : spectra, with **wavelength (nm) as the column header** of each
 
 Place the four wheat files in a directory and pass it with `--data-dir`:
 
