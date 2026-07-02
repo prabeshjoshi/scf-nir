@@ -2,8 +2,7 @@
 
 Reference implementation accompanying:
 
-> **Spectral Contrast Features: A Bin-Difference Approach to Interpretable,
-> Parsimonious, and Cross-Instrument NIR Calibration.** Prabesh Joshi.
+> **Spectral Contrast Features: A Bin-Difference Approach for NIR Calibration.** 
 
 SCF constructs predictive features as **differences between the mean
 intensities of paired spectral bins**, whose positions, widths, and sparsity
@@ -77,11 +76,8 @@ F2: [978.5-988.0]   - [898.5-908.0]   nm   (water O-H second overtone)
 F3: [855.0-862.0]   - [1012.0-1021.5] nm
 ```
 
-## Suggested code-availability statement
 
-> A reference implementation reproducing the results reported in this
-> manuscript is available at <REPO-URL> (archived at <ZENODO-DOI>). The
-> datasets analysed are public third-party benchmarks available from their
+> The datasets analysed are public third-party benchmarks available from their
 > original sources.
 
 ## License
